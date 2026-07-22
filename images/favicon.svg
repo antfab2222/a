@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<rect width="512" height="512" fill="#f7f5f1"/>
+<g stroke="#6b645c" stroke-width="2" fill="none" opacity="0.85">
+  <line x1="70" y1="110" x2="440" y2="110"/>
+  <line x1="70" y1="150" x2="440" y2="150"/>
+  <line x1="70" y1="190" x2="440" y2="190"/>
+  <line x1="70" y1="405" x2="440" y2="405"/>
+  <line x1="70" y1="200" x2="90" y2="200"/>
+  <line x1="70" y1="250" x2="90" y2="250"/>
+  <line x1="70" y1="300" x2="90" y2="300"/>
+  <line x1="70" y1="350" x2="90" y2="350"/>
+</g>
+<text x="90" y="350" font-family="Georgia, 'Times New Roman', serif" font-size="300" fill="#100f0e">A</text>
+<text x="240" y="350" font-family="Georgia, 'Times New Roman', serif" font-size="300" fill="#100f0e">F</text>
+</svg>
