@@ -1201,8 +1201,8 @@ linear-gradient(145deg,rgba(255,255,255,.025),rgba(255,255,255,0)),url("images/t
 .studio-layout .micro-detail img{object-fit:cover;}
 .stair-gallery .micro-figure img{height:590px;}
 .stair-gallery .micro-wide img{height:min(68vw,860px);}
-.stair-gallery .micro-portrait{grid-column:1/-1;width:min(100%,780px);justify-self:center;}
-.stair-gallery .micro-portrait img{height:min(112vw,1080px);object-fit:contain;background:#f7f5f1;}
+.stair-gallery .micro-portrait{grid-column:1/-1;width:min(100%,540px);justify-self:center;background:#f7f5f1;border-color:var(--line-l);}
+.stair-gallery .micro-portrait img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;background:#f7f5f1;padding:18px;}
 .techniques-page .model-placeholder-section{background:#181512;}
 .techniques-page .immersive-section{background:#0a0908;}
 
@@ -1220,4 +1220,36 @@ linear-gradient(145deg,rgba(255,255,255,.025),rgba(255,255,255,0)),url("images/t
   .micro-figure img,.stair-gallery .micro-figure img,.micro-wide img,.stair-gallery .micro-wide img,.stair-gallery .micro-portrait img{height:auto;max-height:900px;}
   .micro-figure figcaption{flex-direction:column;gap:8px;}
   .micro-figure figcaption b{text-align:left;}
+}
+
+
+/* Détail d'escalier — affichage réellement vertical */
+.stair-gallery .micro-portrait{
+  grid-column:1/-1;
+  width:min(100%,620px);
+  justify-self:center;
+}
+.stair-gallery .micro-portrait img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:none;
+  aspect-ratio:auto;
+  object-fit:contain;
+  background:#f7f5f1;
+}
+
+
+/* Signature logo AF */
+#nav .brand.brand-lockup,
+footer .brand.brand-lockup{display:inline-flex;align-items:center;gap:12px;white-space:nowrap;}
+#nav .brand .brand-text,
+footer .brand .brand-text{display:inline-flex;align-items:center;gap:0;}
+#nav .brand .brand-mark{height:18px;width:auto;opacity:.78;transform:translateY(1px);transition:opacity .25s ease, transform .25s ease;mix-blend-mode:screen;}
+#nav .brand:hover .brand-mark{opacity:1;transform:translateY(1px) scale(1.02);} 
+footer .brand.brand-lockup{gap:14px;}
+footer .brand .brand-mark{height:20px;width:auto;opacity:.72;mix-blend-mode:screen;}
+@media (max-width: 720px){
+  #nav .brand .brand-mark{height:15px;}
+  footer .brand .brand-mark{height:18px;}
 }
