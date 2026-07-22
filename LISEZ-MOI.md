@@ -74,13 +74,12 @@ Les fichiers sources ont été convertis en PNG optimisés pour le web. Ne les r
 
 ## Vidéos immersives
 
-Le dossier `videos/` contient un lecteur prêt à l’emploi pour chaque projet.
+Le dossier `videos/` contient un lecteur prêt à l’emploi pour les projets disposant d’une visite immersive. La page Études techniques ne contient pas de vidéo.
 Pour ajouter ou remplacer une visite immersive, conserve exactement le nom attendu :
 
 - `habiter-archipel-immersive.mp4`
 - `nayka-immersive.mp4`
 - `odyssee-medicale-immersive.mp4`
-- `techniques-immersive.mp4`
 
 Nayka contient aussi trois séquences complémentaires :
 `nayka-attente.mp4`, `nayka-repos.mp4` et `nayka-vie-commune.mp4`.
@@ -109,10 +108,9 @@ accessible depuis le bouton de téléchargement. Les projets « Habiter l’arch
 
 ## Photos de maquettes
 
-Déposez les photographies directement dans le dossier `images/` en conservant les noms suivants. Les emplacements apparaîtront automatiquement sur les pages :
+Déposez les photographies directement dans le dossier `images/` en conservant les noms suivants. Les emplacements apparaîtront automatiquement sur les pages concernées :
 
 - `nayka-maquette-1.png`, `nayka-maquette-2.png`, `nayka-maquette-3.png`
 - `habiter-archipel-maquette-1.png`, `habiter-archipel-maquette-2.png`, `habiter-archipel-maquette-3.png`
-- `techniques-maquette-1.png`, `techniques-maquette-2.png`, `techniques-maquette-3.png`
 
 Odyssée Médicale possède déjà sa galerie de maquette avec les fichiers `odyssee-maquette-1.png` à `odyssee-maquette-4.png`.

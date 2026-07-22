@@ -1201,6 +1201,8 @@ linear-gradient(145deg,rgba(255,255,255,.025),rgba(255,255,255,0)),url("images/t
 .studio-layout .micro-detail img{object-fit:cover;}
 .stair-gallery .micro-figure img{height:590px;}
 .stair-gallery .micro-wide img{height:min(68vw,860px);}
+.stair-gallery .micro-portrait{grid-column:1/-1;width:min(100%,780px);justify-self:center;}
+.stair-gallery .micro-portrait img{height:min(112vw,1080px);object-fit:contain;background:#f7f5f1;}
 .techniques-page .model-placeholder-section{background:#181512;}
 .techniques-page .immersive-section{background:#0a0908;}
 
@@ -1215,7 +1217,7 @@ linear-gradient(145deg,rgba(255,255,255,.025),rgba(255,255,255,0)),url("images/t
   .microproject{padding:88px 0 94px;}
   .micro-gallery,.stair-gallery{grid-template-columns:1fr;}
   .micro-wide{grid-column:auto;}
-  .micro-figure img,.stair-gallery .micro-figure img,.micro-wide img,.stair-gallery .micro-wide img{height:auto;max-height:720px;}
+  .micro-figure img,.stair-gallery .micro-figure img,.micro-wide img,.stair-gallery .micro-wide img,.stair-gallery .micro-portrait img{height:auto;max-height:900px;}
   .micro-figure figcaption{flex-direction:column;gap:8px;}
   .micro-figure figcaption b{text-align:left;}
 }
