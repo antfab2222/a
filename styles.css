@@ -1240,16 +1240,62 @@ linear-gradient(145deg,rgba(255,255,255,.025),rgba(255,255,255,0)),url("images/t
 }
 
 
-/* Signature logo AF */
+
+/* Signature AF — proportions naturelles */
 #nav .brand.brand-lockup,
-footer .brand.brand-lockup{display:inline-flex;align-items:center;gap:12px;white-space:nowrap;}
+footer .brand.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+}
+
 #nav .brand .brand-text,
-footer .brand .brand-text{display:inline-flex;align-items:center;gap:0;}
-#nav .brand .brand-mark{height:18px;width:auto;opacity:.78;transform:translateY(1px);transition:opacity .25s ease, transform .25s ease;mix-blend-mode:screen;}
-#nav .brand:hover .brand-mark{opacity:1;transform:translateY(1px) scale(1.02);} 
-footer .brand.brand-lockup{gap:14px;}
-footer .brand .brand-mark{height:20px;width:auto;opacity:.72;mix-blend-mode:screen;}
-@media (max-width: 720px){
-  #nav .brand .brand-mark{height:15px;}
-  footer .brand .brand-mark{height:18px;}
+footer .brand .brand-text {
+  display: inline-flex;
+  align-items: center;
+}
+
+#nav .brand .brand-mark {
+  display: block;
+  width: 48px;
+  height: auto;
+  max-width: none;
+  flex: 0 0 auto;
+  object-fit: contain;
+  opacity: .82;
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+#nav .brand:hover .brand-mark {
+  opacity: 1;
+  transform: scale(1.025);
+}
+
+footer .brand.brand-lockup {
+  gap: 14px;
+}
+
+footer .brand .brand-mark {
+  display: block;
+  width: 58px;
+  height: auto;
+  max-width: none;
+  flex: 0 0 auto;
+  object-fit: contain;
+  opacity: .78;
+}
+
+@media (max-width: 720px) {
+  #nav .brand.brand-lockup {
+    gap: 9px;
+  }
+
+  #nav .brand .brand-mark {
+    width: 38px;
+  }
+
+  footer .brand .brand-mark {
+    width: 48px;
+  }
 }
