@@ -165,14 +165,48 @@
       applyTransform();
     }
 
+    function hdSourceFor(img) {
+      /* Tu peux imposer un fichier HD précis avec data-full dans le HTML.
+         Sinon, la visionneuse cherche automatiquement le même nom avec -hd
+         avant l'extension : plan.webp devient plan-hd.webp. */
+      if (img.dataset.full) return img.dataset.full;
+
+      var original = img.currentSrc || img.src;
+      try {
+        var url = new URL(original, document.baseURI);
+        var match = url.pathname.match(/^(.*?)(\.[^./]+)$/);
+        if (!match || /-hd$/i.test(match[1])) return original;
+        url.pathname = match[1] + "-hd" + match[2];
+        return url.href;
+      } catch (error) {
+        return original.replace(/(\.[^./?#]+)([?#].*)?$/, "-hd$1$2");
+      }
+    }
+
     function showImage(index) {
       currentIndex = (index + lightboxImages.length) % lightboxImages.length;
       var source = lightboxImages[currentIndex];
+      var originalSource = source.currentSrc || source.src;
+      var hdSource = hdSourceFor(source);
+
       resetZoom();
-      lbImage.src = source.currentSrc || source.src;
       lbImage.alt = source.alt || "Image agrandie";
       lbCount.textContent = (currentIndex + 1) + " / " + lightboxImages.length;
       lbCaption.textContent = captionFor(source);
+      lightbox.classList.add("is-loading");
+
+      /* Charge d'abord la version HD. Si elle n'existe pas encore, on revient
+         automatiquement à l'image d'aperçu afin que la visionneuse fonctionne. */
+      var loader = new Image();
+      loader.onload = function () {
+        lbImage.src = loader.src;
+        lightbox.classList.remove("is-loading");
+      };
+      loader.onerror = function () {
+        lbImage.src = originalSource;
+        lightbox.classList.remove("is-loading");
+      };
+      loader.src = hdSource;
     }
 
     function openLightbox(index) {
