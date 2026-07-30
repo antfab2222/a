@@ -1361,3 +1361,15 @@ body.lightbox-open{overflow:hidden;}
 .lightbox.is-pdf .lightbox-caption{display:none;}
 .lightbox-btn:disabled{opacity:.35;cursor:not-allowed;}
 @media(max-width:700px){.lightbox-pdf{height:calc(100vh - 125px)}.lightbox.is-pdf .lightbox-stage{grid-column:1/-1;padding:0 4px 4px}.lightbox.is-pdf .lightbox-nav{display:none}}
+
+
+/* Téléchargement du dossier de plans de chaque projet */
+.project-download{padding:clamp(54px,8vw,100px) 0;background:var(--bone,#f2eee6);color:var(--ink,#171513);}
+.project-download-card{display:flex;align-items:center;justify-content:space-between;gap:32px;padding:clamp(24px,4vw,48px);border:1px solid rgba(23,21,19,.18);background:#fff;}
+.project-download-copy{max-width:700px;}
+.project-download-copy h2{margin:.35rem 0 .7rem;font-size:clamp(2rem,4vw,4.2rem);line-height:.95;}
+.project-download-copy p{margin:0;max-width:58ch;opacity:.72;}
+.project-download-button{display:inline-flex;align-items:center;justify-content:space-between;gap:24px;min-width:245px;padding:18px 20px;border:1px solid currentColor;background:var(--ink,#171513);color:#fff;text-decoration:none;font:700 .76rem/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;transition:transform .18s ease,background .18s ease,color .18s ease;}
+.project-download-button span:last-child{font-size:1.35rem;line-height:1;}
+.project-download-button:hover,.project-download-button:focus-visible{transform:translateY(-3px);background:var(--accent,#c86d32);color:#fff;outline:none;}
+@media(max-width:760px){.project-download-card{align-items:stretch;flex-direction:column}.project-download-button{width:100%;min-width:0}}
