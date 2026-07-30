@@ -1,0 +1,20 @@
+IMAGES DU SITE — FORMAT WEBP
+
+Toutes les images affichées dans les pages utilisent maintenant .webp.
+
+Pour chaque image :
+- aperçu dans la page : nom-image.webp
+- version haute définition ouverte au clic : nom-image-hd.webp
+
+Exemples :
+archipel-plan-rdc.webp
+archipel-plan-rdc-hd.webp
+
+nayka-entree.webp
+nayka-entree-hd.webp
+
+habiter-archipel-maquette-1.webp
+habiter-archipel-maquette-1-hd.webp
+
+Place tous les fichiers dans le dossier images/.
+Les PDF ne sont plus utilisés par la visionneuse. Le fichier cv-antoine-fabre.pdf reste un document téléchargeable et n'est pas une image.

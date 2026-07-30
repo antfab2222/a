@@ -4,7 +4,7 @@ UTILISATION DES IMAGES HD ET DES PDF
 L'aperçu peut garder son extension actuelle.
 La version ouverte en grand doit être en WebP avec le suffixe -hd :
 
-images/nayka-entree.png
+images/nayka-entree.webp
 images/nayka-entree-hd.webp
 
 images/habiter-archipel-maquette-1.webp
@@ -14,10 +14,10 @@ images/habiter-archipel-maquette-1-hd.webp
 L'aperçu reste une image légère dans la page.
 La version ouverte au clic est un PDF vectoriel portant le même nom :
 
-images/archipel-plan-rdc.jpg
+images/archipel-plan-rdc.webp
 images/archipel-plan-rdc.pdf
 
-images/nayka-coupe-r2.png
+images/nayka-coupe-r2.webp
 images/nayka-coupe-r2.pdf
 
 Le PDF est affiché avec le lecteur du navigateur, qui permet de zoomer sans perdre la netteté.

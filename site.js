@@ -168,14 +168,11 @@
     }
 
     function fullSourceFor(img) {
-      /* data-full permet d'indiquer un PDF vectoriel précis pour les plans.
-         Pour les autres images, la visionneuse cherche automatiquement une
-         version WebP HD : image.jpg devient image-hd.webp. */
+      /* Toutes les images agrandies utilisent une version WebP HD.
+         Exemple : image.webp devient image-hd.webp.
+         data-full peut indiquer un nom WebP HD spécifique. */
       if (img.dataset.full) {
-        return {
-          src: img.dataset.full,
-          type: img.dataset.fullType || (/\.pdf(?:[?#].*)?$/i.test(img.dataset.full) ? "pdf" : "image")
-        };
+        return { src: img.dataset.full, type: "image" };
       }
 
       var original = img.currentSrc || img.src;
