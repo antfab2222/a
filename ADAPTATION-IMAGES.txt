@@ -1,0 +1,8 @@
+Le code a été adapté aux extensions réellement présentes dans images (JPG, PNG, WebP et SVG).
+
+Fichiers encore absents :
+- projet-habiter-archipel.html: images/habiter-archipel-maquette-1.png
+- projet-habiter-archipel.html: images/habiter-archipel-maquette-2.png
+- projet-nayka.html: images/nayka-maquette-1.png
+- projet-nayka.html: images/nayka-maquette-2.png
+- projet-nayka.html: images/nayka-maquette-3.png

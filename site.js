@@ -168,9 +168,9 @@
     }
 
     function fullSourceFor(img) {
-      /* Toutes les images agrandies utilisent une version PNG HD.
-         Exemple : image.png devient image-hd.png.
-         data-full peut indiquer un nom PNG HD spécifique. */
+      /* La visionneuse respecte le format réel de chaque image (JPG, PNG ou WebP).
+         Exemple : image.jpg devient image-hd.jpg et image.webp devient image-hd.webp.
+         Si la version HD n’existe pas, l’image normale est utilisée automatiquement. */
       if (img.dataset.full) {
         return { src: img.dataset.full, type: "image" };
       }
@@ -180,11 +180,11 @@
         var url = new URL(original, document.baseURI);
         var match = url.pathname.match(/^(.*?)(\.[^./]+)$/);
         if (!match || /-hd$/i.test(match[1])) return { src: original, type: "image" };
-        url.pathname = match[1] + "-hd.png";
+        url.pathname = match[1] + "-hd" + match[2];
         return { src: url.href, type: "image" };
       } catch (error) {
         return {
-          src: original.replace(/\.[^./?#]+([?#].*)?$/, "-hd.png$1"),
+          src: original.replace(/(\.[^./?#]+)([?#].*)?$/, "-hd$1$2"),
           type: "image"
         };
       }
