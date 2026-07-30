@@ -1301,8 +1301,12 @@ footer .brand .brand-mark {
 }
 
 /* Fullscreen image viewer */
-.lightbox-trigger{cursor:zoom-in;}
+.lightbox-trigger{cursor:zoom-in!important;pointer-events:auto!important;position:relative;z-index:2;}
 .lightbox-trigger:focus-visible{outline:3px solid var(--accent);outline-offset:4px;}
+.has-lightbox{position:relative;}
+.has-lightbox::after{content:"Cliquer pour agrandir  ↗";position:absolute;right:14px;bottom:14px;z-index:3;padding:9px 12px;border-radius:999px;background:rgba(12,11,10,.82);color:#fff;font:700 .64rem/1 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;pointer-events:none;opacity:0;transform:translateY(5px);transition:opacity .18s ease,transform .18s ease;}
+.has-lightbox:hover::after,.has-lightbox:focus-within::after{opacity:1;transform:none;}
+@media(hover:none){.has-lightbox::after{opacity:.9;transform:none;font-size:.58rem;padding:8px 10px;}}
 body.lightbox-open{overflow:hidden;}
 .lightbox{position:fixed;inset:0;z-index:9999;display:grid;grid-template-columns:minmax(48px,7vw) 1fr minmax(48px,7vw);grid-template-rows:auto 1fr auto;background:rgba(10,9,8,.96);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .22s ease,visibility .22s ease;color:#fff;}
 .lightbox.is-open{opacity:1;visibility:visible;pointer-events:auto;}

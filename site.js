@@ -195,10 +195,14 @@
 
     lightboxImages.forEach(function (img, index) {
       img.classList.add("lightbox-trigger");
+      img.dataset.lightboxIndex = String(index);
       img.setAttribute("tabindex", "0");
       img.setAttribute("role", "button");
-      img.setAttribute("aria-label", (img.alt || "Image") + " — ouvrir en grand");
-      img.addEventListener("click", function () { openLightbox(index); });
+      img.setAttribute("aria-label", (img.alt || "Image") + " — cliquer pour ouvrir en grand");
+
+      var holder = img.parentElement;
+      if (holder) holder.classList.add("has-lightbox");
+
       img.addEventListener("keydown", function (event) {
         if (event.key === "Enter" || event.key === " ") {
           event.preventDefault();
@@ -206,6 +210,16 @@
         }
       });
     });
+
+    /* Capture le clic au plus tôt : la visionneuse fonctionne même si un autre
+       effet de galerie intercepte ensuite l’événement. */
+    document.addEventListener("click", function (event) {
+      var trigger = event.target.closest("img.lightbox-trigger");
+      if (!trigger || lightbox.contains(trigger)) return;
+      event.preventDefault();
+      event.stopPropagation();
+      openLightbox(Number(trigger.dataset.lightboxIndex));
+    }, true);
 
     lightbox.addEventListener("click", function (event) {
       var action = event.target.closest("[data-action]");
