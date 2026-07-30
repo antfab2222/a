@@ -4,20 +4,20 @@ IMAGES HAUTE DÉFINITION
 La visionneuse cherche automatiquement une version HD pour chaque image cliquable.
 
 Convention :
-  image.webp       = aperçu affiché dans la page
-  image-hd.webp    = image chargée après le clic
+  image.png       = aperçu affiché dans la page
+  image-hd.png    = image chargée après le clic
 
 Exemples :
   archipel-plan-rdc.jpg       -> archipel-plan-rdc-hd.jpg
   archipel-coupes.jpg         -> archipel-coupes-hd.jpg
   nayka-plan-r2.png           -> nayka-plan-r2-hd.png
-  odyssee-maquette-1.webp     -> odyssee-maquette-1-hd.webp
+  odyssee-maquette-1.png     -> odyssee-maquette-1-hd.png
 
 Les deux fichiers doivent être placés dans le dossier images/.
 
 Une image peut aussi utiliser un autre nom HD en ajoutant data-full :
-  <img src="images/plan-apercu.webp"
-       data-full="images/plan-original-hd.webp"
+  <img src="images/plan-apercu.png"
+       data-full="images/plan-original-hd.png"
        alt="Plan du projet">
 
 Si le fichier -hd n'existe pas, le site utilise automatiquement l'image d'aperçu.

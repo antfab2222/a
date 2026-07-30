@@ -168,9 +168,9 @@
     }
 
     function fullSourceFor(img) {
-      /* Toutes les images agrandies utilisent une version WebP HD.
-         Exemple : image.webp devient image-hd.webp.
-         data-full peut indiquer un nom WebP HD spécifique. */
+      /* Toutes les images agrandies utilisent une version PNG HD.
+         Exemple : image.png devient image-hd.png.
+         data-full peut indiquer un nom PNG HD spécifique. */
       if (img.dataset.full) {
         return { src: img.dataset.full, type: "image" };
       }
@@ -180,11 +180,11 @@
         var url = new URL(original, document.baseURI);
         var match = url.pathname.match(/^(.*?)(\.[^./]+)$/);
         if (!match || /-hd$/i.test(match[1])) return { src: original, type: "image" };
-        url.pathname = match[1] + "-hd.webp";
+        url.pathname = match[1] + "-hd.png";
         return { src: url.href, type: "image" };
       } catch (error) {
         return {
-          src: original.replace(/\.[^./?#]+([?#].*)?$/, "-hd.webp$1"),
+          src: original.replace(/\.[^./?#]+([?#].*)?$/, "-hd.png$1"),
           type: "image"
         };
       }

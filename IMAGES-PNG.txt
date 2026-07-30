@@ -1,0 +1,20 @@
+IMAGES DU SITE — FORMAT PNG
+
+Toutes les images affichées dans les pages utilisent maintenant .png.
+
+Pour chaque image :
+- aperçu dans la page : nom-image.png
+- version haute définition ouverte au clic : nom-image-hd.png
+
+Exemples :
+archipel-plan-rdc.png
+archipel-plan-rdc-hd.png
+
+nayka-entree.png
+nayka-entree-hd.png
+
+habiter-archipel-maquette-1.png
+habiter-archipel-maquette-1-hd.png
+
+Place tous les fichiers dans le dossier images/.
+Les PDF ne sont plus utilisés par la visionneuse. Le fichier cv-antoine-fabre.pdf reste un document téléchargeable et n'est pas une image.
