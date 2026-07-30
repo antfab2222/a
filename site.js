@@ -119,6 +119,7 @@
       '<button type="button" class="lightbox-nav lightbox-prev" data-action="prev" aria-label="Image précédente">‹</button>' +
       '<div class="lightbox-stage">' +
         '<img class="lightbox-image" alt="" draggable="false" />' +
+        '<iframe class="lightbox-pdf" title="Plan PDF agrandi" loading="eager"></iframe>' +
       '</div>' +
       '<button type="button" class="lightbox-nav lightbox-next" data-action="next" aria-label="Image suivante">›</button>' +
       '<div class="lightbox-caption"></div>';
@@ -126,6 +127,7 @@
 
     var lbImage = lightbox.querySelector(".lightbox-image");
     var lbStage = lightbox.querySelector(".lightbox-stage");
+    var lbPdf = lightbox.querySelector(".lightbox-pdf");
     var lbCount = lightbox.querySelector(".lightbox-count");
     var lbReset = lightbox.querySelector('[data-action="reset"]');
     var lbCaption = lightbox.querySelector(".lightbox-caption");
@@ -165,38 +167,60 @@
       applyTransform();
     }
 
-    function hdSourceFor(img) {
-      /* Tu peux imposer un fichier HD précis avec data-full dans le HTML.
-         Sinon, la visionneuse cherche automatiquement le même nom avec -hd
-         avant l'extension : plan.webp devient plan-hd.webp. */
-      if (img.dataset.full) return img.dataset.full;
+    function fullSourceFor(img) {
+      /* data-full permet d'indiquer un PDF vectoriel précis pour les plans.
+         Pour les autres images, la visionneuse cherche automatiquement une
+         version WebP HD : image.jpg devient image-hd.webp. */
+      if (img.dataset.full) {
+        return {
+          src: img.dataset.full,
+          type: img.dataset.fullType || (/\.pdf(?:[?#].*)?$/i.test(img.dataset.full) ? "pdf" : "image")
+        };
+      }
 
       var original = img.currentSrc || img.src;
       try {
         var url = new URL(original, document.baseURI);
         var match = url.pathname.match(/^(.*?)(\.[^./]+)$/);
-        if (!match || /-hd$/i.test(match[1])) return original;
-        url.pathname = match[1] + "-hd" + match[2];
-        return url.href;
+        if (!match || /-hd$/i.test(match[1])) return { src: original, type: "image" };
+        url.pathname = match[1] + "-hd.webp";
+        return { src: url.href, type: "image" };
       } catch (error) {
-        return original.replace(/(\.[^./?#]+)([?#].*)?$/, "-hd$1$2");
+        return {
+          src: original.replace(/\.[^./?#]+([?#].*)?$/, "-hd.webp$1"),
+          type: "image"
+        };
       }
     }
+
 
     function showImage(index) {
       currentIndex = (index + lightboxImages.length) % lightboxImages.length;
       var source = lightboxImages[currentIndex];
       var originalSource = source.currentSrc || source.src;
-      var hdSource = hdSourceFor(source);
+      var full = fullSourceFor(source);
 
       resetZoom();
       lbImage.alt = source.alt || "Image agrandie";
       lbCount.textContent = (currentIndex + 1) + " / " + lightboxImages.length;
       lbCaption.textContent = captionFor(source);
       lightbox.classList.add("is-loading");
+      lightbox.classList.toggle("is-pdf", full.type === "pdf");
 
-      /* Charge d'abord la version HD. Si elle n'existe pas encore, on revient
-         automatiquement à l'image d'aperçu afin que la visionneuse fonctionne. */
+      lbImage.hidden = full.type === "pdf";
+      lbPdf.hidden = full.type !== "pdf";
+      lbReset.disabled = full.type === "pdf";
+      lightbox.querySelector('[data-action="zoom-in"]').disabled = full.type === "pdf";
+      lightbox.querySelector('[data-action="zoom-out"]').disabled = full.type === "pdf";
+
+      if (full.type === "pdf") {
+        lbImage.removeAttribute("src");
+        lbPdf.src = full.src + (/\?/.test(full.src) ? "&" : "?") + "view=FitH";
+        lbPdf.onload = function () { lightbox.classList.remove("is-loading"); };
+        return;
+      }
+
+      lbPdf.removeAttribute("src");
       var loader = new Image();
       loader.onload = function () {
         lbImage.src = loader.src;
@@ -206,8 +230,9 @@
         lbImage.src = originalSource;
         lightbox.classList.remove("is-loading");
       };
-      loader.src = hdSource;
+      loader.src = full.src;
     }
+
 
     function openLightbox(index) {
       lastFocus = document.activeElement;
@@ -224,6 +249,8 @@
       document.body.classList.remove("lightbox-open");
       resetZoom();
       lbImage.removeAttribute("src");
+      lbPdf.removeAttribute("src");
+      lightbox.classList.remove("is-pdf", "is-loading");
       if (lastFocus && lastFocus.focus) lastFocus.focus();
     }
 
@@ -271,12 +298,13 @@
     });
 
     lbStage.addEventListener("wheel", function (event) {
-      if (!lightbox.classList.contains("is-open")) return;
+      if (!lightbox.classList.contains("is-open") || lightbox.classList.contains("is-pdf")) return;
       event.preventDefault();
       setZoom(scale + (event.deltaY < 0 ? 0.2 : -0.2));
     }, { passive: false });
 
     lbImage.addEventListener("dblclick", function () {
+      if (lightbox.classList.contains("is-pdf")) return;
       setZoom(scale > 1 ? 1 : 2);
     });
 

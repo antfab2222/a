@@ -1347,3 +1347,17 @@ body.lightbox-open{overflow:hidden;}
 .lightbox.is-loading .lightbox-stage::before{opacity:1;}
 .lightbox.is-loading .lightbox-image{opacity:.25;}
 .lightbox-image{transition:transform .16s ease,opacity .18s ease;}
+
+/* PDF vectoriel dans la visionneuse */
+.lightbox-pdf{
+  display:block;
+  width:100%;
+  height:calc(100vh - 145px);
+  border:0;
+  background:#fff;
+}
+.lightbox-pdf[hidden],.lightbox-image[hidden]{display:none!important;}
+.lightbox.is-pdf .lightbox-stage{padding:0 8px 8px;overflow:hidden;}
+.lightbox.is-pdf .lightbox-caption{display:none;}
+.lightbox-btn:disabled{opacity:.35;cursor:not-allowed;}
+@media(max-width:700px){.lightbox-pdf{height:calc(100vh - 125px)}.lightbox.is-pdf .lightbox-stage{grid-column:1/-1;padding:0 4px 4px}.lightbox.is-pdf .lightbox-nav{display:none}}
