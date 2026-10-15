@@ -1,0 +1,33 @@
+# Configuration de travail Decap CMS — NON ACTIVE
+# Avant activation : déployer un fournisseur OAuth GitHub fiable et configurer
+# backend.base_url + auth_endpoint ; tester sur un hébergement de prévisualisation.
+backend:
+  name: github
+  repo: antfab2222/a
+  branch: feature/administration-privee
+# base_url: https://votre-passerelle-oauth.example
+# auth_endpoint: auth
+media_folder: images/uploads
+public_folder: /images/uploads
+publish: false
+locale: fr
+collections:
+  - name: projets
+    label: Projets (brouillons)
+    folder: contenu/projets
+    create: true
+    extension: json
+    format: json
+    slug: "{{slug}}"
+    fields:
+      - {label: Titre, name: title, widget: string}
+      - {label: Identifiant, name: slug, widget: string}
+      - {label: Description, name: description, widget: text, required: false}
+      - {label: Image principale, name: hero, widget: image, required: false}
+      - label: Galerie
+        name: gallery
+        widget: list
+        required: false
+        fields:
+          - {label: Image, name: image, widget: image}
+          - {label: Légende, name: caption, widget: string, required: false}
