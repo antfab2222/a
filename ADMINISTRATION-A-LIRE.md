@@ -1,20 +1,30 @@
-# Espace d'administration — travail en cours
+# Administration du portfolio — version 1
 
-Cette branche sert à développer l'éditeur privé du portfolio, sans modifier la branche `main` ni le site public.
+Le tableau de bord est disponible à `/admin/` sur le domaine GitHub Pages, depuis la branche `main`.
 
-## État actuel
-- `admin/index.html` : page d'attente non liée à la navigation publique.
-- `admin/config.yml` : configuration initiale Decap CMS, **non activée**.
-- Les pages HTML existantes continuent d'utiliser leurs images et textes statiques.
-- Aucun mécanisme d'authentification n'est encore déployé : **ne pas présenter /admin comme un espace sécurisé opérationnel**.
+## Fonctions disponibles
+- Connexion via un jeton personnel GitHub **fine-grained** saisi à chaque session, jamais stocké dans localStorage ou cookies.
+- Choix du projet et aperçu de ses images existantes.
+- Remplacement d'images au **même chemin**, sans modifier les références HTML.
+- Import d'une nouvelle image dans `images/uploads/` (ne l'insère pas encore dans les pages).
+- Confirmation avant publication ; les modifications sont commitées directement sur `main`.
 
-## À réaliser avant utilisation
-1. Choisir un hébergeur pour la passerelle OAuth GitHub, ou une autre solution CMS avec authentification.
-2. Configurer et tester la connexion sécurisée, les permissions et la déconnexion.
-3. Relier les données de `contenu/projets/*.json` aux pages publiques (ou migrer vers un générateur statique).
-4. Mettre en place brouillons / aperçu / publication sans modification immédiate du site public.
-5. Tester l'import d'images, le recadrage, les légendes, l'ordre des galeries et les vidéos.
-6. Tester la branche en prévisualisation avant fusion dans `main`.
+## Configuration du jeton
+Sur GitHub > Settings > Developer settings > Personal access tokens > Fine-grained tokens :
+- Resource owner : compte possédant le dépôt
+- Repository access : Only select repositories > `antfab2222/a`
+- Repository permissions : Contents > Read and write
+- Choisir une durée d'expiration courte.
 
-**Important :** cacher un lien /admin ou ajouter une balise noindex ne constitue pas une mesure de sécurité.
-Ne jamais stocker un token GitHub ou un secret OAuth dans le HTML ou le JavaScript public.
+**Ne jamais envoyer le jeton dans une conversation, un commit ou une capture d'écran.**
+
+## Limites et sécurité
+- L'interface HTML est publiquement accessible, mais toute écriture exige une autorisation GitHub valide. L'absence de lien public n'est pas une protection.
+- Le jeton est gardé uniquement en mémoire de la page ; fermer/recharger impose de se reconnecter.
+- Les images remplacées sont publiées directement sur `main` ; pas de brouillons dans cette version.
+- Les légendes, la mise en page, la suppression, le réordonnancement et l'ajout automatique à la galerie ne sont pas encore pris en charge.
+- L'interface est une solution transitoire ; prévoir une authentification OAuth avec backend sécurisé pour un usage durable.
+- Un remplacement doit conserver l'extension du fichier d'origine ; maximum 15 Mo.
+- Les changements du site peuvent apparaître après le déploiement GitHub Pages et expiration des caches.
+
+Sauvegarde du site antérieur : branche `backup/site-avant-administration`.
