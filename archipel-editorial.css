@@ -1,0 +1,25 @@
+/* Habiter l'Archipel — editorial beige study, isolated from the rest of the site */
+body.archipel-page{background:#f5f3ee;color:#45443f}
+.archipel-page #nav{background:#f5f3ee!important;border-bottom:1px solid #dedbd2}
+.archipel-page #nav a,.archipel-page #nav button,.archipel-page #nav .brand-text{color:#383934!important}
+.archipel-page .proj-hero,.archipel-page .proj-body,.archipel-page .project-story,.archipel-page .climate-strip,.archipel-page .proj-gallery,.archipel-page .archipel-tech,.archipel-page .model-placeholder-section,.archipel-page .immersive-section,.archipel-page .archipelago-concept{background:#f5f3ee!important;color:#45443f!important}
+.archipel-page .proj-title,.archipel-page .sec-head h2,.archipel-page h3{color:#3e403c!important}
+.archipel-page .proj-title{font-family:Montserrat,sans-serif;font-weight:300;letter-spacing:.025em;text-transform:uppercase}
+.archipel-page .proj-lead,.archipel-page .proj-prose p,.archipel-page .archipelago-intro p,.archipel-page .climate-copy p,.archipel-page .story-copy p{color:#555b57!important}
+.archipel-page .proj-cover{border-radius:0}
+.archipel-page .eyebrow,.archipel-page .sec-head .n{color:#8b8a80!important}
+.archipel-page .sec-head,.archipel-page .proj-meta .row{border-color:#d9d6cd!important}
+.archipel-page .project-question{border-color:#b6ab99!important;color:#555b57!important}
+.archipel-page .archipel-editorial{background:#f5f3ee;color:#43443e;padding:clamp(60px,8vw,130px) 0}
+.archipel-page .ae-head{display:grid;grid-template-columns:1fr 1fr;gap:8%;align-items:start;margin-bottom:46px;border-top:1px solid #cbc7bc;padding-top:22px}
+.archipel-page .ae-num{font-size:clamp(40px,7vw,96px);font-weight:200;color:#c9c7be;line-height:1}
+.archipel-page .ae-title{font:300 clamp(24px,3.4vw,46px)/1.2 Montserrat,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.archipel-page .ae-head p{max-width:440px;color:#66685f;font-size:13px;line-height:1.9}
+.archipel-page .ae-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.archipel-page .ae-figure{margin:0;background:#eae6dc}
+.archipel-page .ae-figure img{display:block;width:100%;height:auto;max-height:560px;object-fit:contain;background:#eeeae1}
+.archipel-page .ae-figure figcaption{background:#f5f3ee;padding:13px 0 28px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.archipel-page .ae-figure figcaption span{display:block;margin-top:6px;font-size:12px;letter-spacing:0;text-transform:none;color:#686a62}
+.archipel-page .ae-wide{grid-column:1/-1}
+.archipel-page .ae-note{font-size:12px;color:#71736b;border-top:1px solid #cbc7bc;padding-top:15px;margin-top:22px}
+@media(max-width:700px){.archipel-page .ae-head,.archipel-page .ae-grid{grid-template-columns:1fr}.archipel-page .ae-wide{grid-column:auto}.archipel-page .archipel-editorial{padding:55px 0}}
