@@ -82,3 +82,11 @@ footer .brand-mark{display:none!important}
 .nayka-page .nayka-materials,.odyssee-page .odyssee-materials{background:#f5f3ee!important}
 @media(max-width:800px){.wrap{padding:0 22px!important}.hero{min-height:75vh!important}.hero-word{font-size:clamp(55px,14vw,105px)!important}.page-title{font-size:clamp(48px,12vw,90px)!important}.proj-title{font-size:clamp(46px,10vw,85px)!important}.sec-head h2{font-size:clamp(27px,7vw,43px)!important}#nav #menu{background:#f5f3ee!important}.proj-layout{display:block!important}.pf-grid{grid-template-columns:1fr!important}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.p-media img,.pf-media img{transition:none!important}}
+
+/* Homepage hero contrast repair: neutralize legacy dark overlay and outlined letters */
+.hero::after{display:none!important;content:none!important}
+.hero .topo{opacity:.075!important;filter:grayscale(1)!important}
+.hero-word .thin{color:#363a35!important;-webkit-text-stroke:0!important;text-shadow:none!important}
+.hero .hero-role,.hero .hero-name,.hero .hero-intro{color:#454941!important;opacity:1!important}
+.hero .hero-role{font-family:Montserrat,Arial,sans-serif!important;font-weight:500!important}
+.hero .hero-top,.hero .hero-meta,.hero .hero-cta{position:relative;z-index:3}
