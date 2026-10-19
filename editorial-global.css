@@ -1,0 +1,84 @@
+/* ANTOINE FABRE — 2026 EDITORIAL REBRAND
+   Global beige/ivory architecture portfolio. Loaded after legacy styles. */
+:root{--ink:#f5f3ee;--ink-2:#eeeae2;--char:#eae5dc;--char-2:#e4dfd5;--grey:#77776e;--grey-d:#646760;--beige:#43453f;--beige-lt:#faf9f6;--beige-2:#e7e2d8;--bone:#333832;--line-d:rgba(66,70,63,.14);--line-l:rgba(66,70,63,.14);--accent:#a58e72;--max:1320px}
+html{scroll-behavior:smooth;color-scheme:light}
+body,body.archipel-page,body.nayka-page,body.odyssee-page,body.techniques-page{background:#f5f3ee!important;color:#42453f!important;font-family:Montserrat,Arial,sans-serif!important;font-weight:300}
+body p,body li{line-height:1.85}
+body h1,body h2,body h3,body h4{font-family:Montserrat,Arial,sans-serif!important;font-weight:300!important;letter-spacing:.035em!important;line-height:1.15!important;color:#343832}
+body h4{font-weight:500!important}
+a:focus-visible,button:focus-visible{outline:2px solid #a58e72;outline-offset:4px}
+.wrap{max-width:1320px}
+#nav{background:rgba(245,243,238,.96)!important;color:#343832!important;border-bottom:1px solid #ddd8ce!important;backdrop-filter:blur(16px)}
+#nav a,#nav button,#nav .brand-text,#nav .brand-text b{color:#343832!important}
+#nav .brand-mark{display:none!important}
+#nav .brand-text{font-family:Montserrat,Arial,sans-serif!important;font-size:clamp(13px,1.3vw,19px)!important;letter-spacing:.17em!important;font-weight:400!important}
+#nav a:hover,#nav a[aria-current="page"]{color:#9a8265!important}
+#nav #menu{background:#f5f3ee!important}
+#nav #menu a{font-size:11px!important;letter-spacing:.15em!important;text-transform:uppercase}
+.topo{opacity:.07!important;filter:grayscale(1)}
+.eyebrow,.vlabel,.breadcrumb,.breadcrumb a,.proj-kicker,.pf-cat,.p-cat,.cap{color:#7d7c73!important;font-size:11px!important;letter-spacing:.16em!important}
+.hero,.page-head,.proj-hero,.cv-page-head{background:#f5f3ee!important;color:#343832!important}
+.hero{min-height:85vh!important}
+.hero-word,.page-title,.proj-title{font-family:Montserrat,Arial,sans-serif!important;font-weight:200!important;letter-spacing:.065em!important;text-transform:uppercase!important;color:#363a35!important}
+.hero-word{font-size:clamp(70px,12vw,190px)!important;line-height:.98!important}
+.page-title{font-size:clamp(62px,9vw,130px)!important}
+.proj-title{font-size:clamp(55px,8vw,110px)!important}
+.hero-word .thin,.page-title .thin{font-weight:200!important}
+.hero-name,.hero-role,.hero-intro,.page-sub,.proj-lead{color:#545851!important}
+.hero-name{font-weight:400!important}
+.hero-intro,.page-sub,.proj-lead{font-size:clamp(14px,1.25vw,17px)!important;line-height:1.85!important}
+.btn,.chip,.tag,.project-download-button{background:transparent!important;color:#3f433d!important;border:1px solid #bcb7ac!important;border-radius:0!important;box-shadow:none!important;font-family:Montserrat,Arial,sans-serif!important;font-size:11px!important;font-weight:500!important;letter-spacing:.1em!important;text-transform:uppercase}
+.btn:hover,.chip:hover,.chip[aria-pressed="true"],.tag:hover,.project-download-button:hover{background:#ded8cd!important;color:#30342f!important;border-color:#9d9589!important}
+.proof-strip,.marquee{background:#eae6dd!important;color:#585a52!important;border-color:#d7d1c5!important}
+.proof-strip strong,.marquee span{color:#44473f!important}
+.light,.proj-body,.archipelago-concept,.project-story,.climate-strip,.proj-gallery,.archipel-tech,.model-placeholder-section,.immersive-section,.nayka-concept,.nayka-zoning-section,.nayka-materials,.odyssee-concept,.odyssee-zoning-section,.odyssee-materials,.odyssee-model-section,.microproject,.related,.project-download,.cv-wrap{background:#f5f3ee!important;color:#454840!important}
+section{scroll-margin-top:85px}
+.sec-head{border-color:#cfc9bf!important}
+.sec-head .n,.proj-kicker .n,.micro-num,.cv-index,.principle-num,.story-index{color:#c2beb3!important;font-weight:200!important}
+.sec-head h2{font-size:clamp(29px,4vw,57px)!important;text-transform:uppercase!important;letter-spacing:.045em!important}
+.about-lead,.concept-lead,.cv-lead{color:#424740!important;font-weight:300!important}
+.about-body,.proj-prose,.proj-prose p,.cv-prose,.principle p,.story-copy p,.tech-intro p,.climate-copy p{color:#5d6159!important}
+.about-grid,.contact-grid,.proj-layout,.cv-layout{border-color:#d9d3c8!important}
+.ph{background:#e8e4da!important}
+.ph::before,.ph::after{display:none!important}
+.ph img,.pf-media img,.p-media img,.proj-cover img,.story-figure img{filter:none!important}
+.project,.pf-card,.rel-card,.principle,.cv-side,.cv-main,.cv-callout,.cv-portrait-card,.cv-email-card{background:#f5f3ee!important;color:#454840!important;border-color:#d8d2c7!important;box-shadow:none!important}
+.project,.pf-card,.rel-card{border-radius:0!important}
+.p-media,.pf-media,.proj-cover,.story-figure,.tech-figure,.micro-figure{border-radius:0!important;overflow:hidden}
+.p-media img,.pf-media img{transition:transform .65s ease!important}
+.p-media:hover img,.pf-media:hover img{transform:scale(1.025)}
+.p-body h3,.pf-body h3{font-size:clamp(22px,2.4vw,37px)!important;text-transform:uppercase!important}
+.p-body p,.pf-body p{color:#62645d!important}
+.p-num,.pf-idx{color:#d2cabe!important}
+.filter-bar,.pf-count{border-color:#d5cfc3!important;color:#62645d!important}
+.pf-grid{gap:clamp(24px,3vw,46px)!important}
+.pf-card{border-bottom:1px solid #d4cec3!important}
+.pf-body{padding-top:20px!important}
+.proj-meta .row,.proj-prose .block,.project-question,.cv-sec,.timeline .tl-item{border-color:#d6d0c4!important}
+.proj-meta .k,.proj-meta .v,.cv-contact-details .k,.cv-contact-details .v{color:#585d55!important}
+.project-question{color:#555b52!important;background:#ece7dd!important}
+.story-figure figcaption,.tech-figure figcaption,.a1-board figcaption,.micro-figure figcaption{background:#f5f3ee!important;color:#555b52!important}
+.story-figure figcaption span,.tech-figure figcaption span{color:#77786f!important}
+.climate-points li{border-color:#d9d3c8!important}
+.climate-points b,.climate-points span{color:#565b52!important}
+.archipel-gallery-grid figure,.nayka-material-grid figure,.odyssee-material-grid figure{background:#eeeae1!important}
+.gal-cap{background:rgba(245,243,238,.92)!important;color:#444840!important}
+.model-slot,.model-slot-placeholder{background:#ebe6dc!important;color:#5a5e55!important;border-color:#cfc9be!important}
+.project-download-card,.immersive-main,.a1-board{background:#eeeae2!important;border-color:#d8d2c7!important}
+.proj-nav,.related,.foot-top,.foot-bot,footer{border-color:#d5cfc4!important}
+footer{background:#eae6dd!important;color:#53564f!important}
+footer a,footer .brand-text,footer span{color:#53564f!important}
+footer .brand-mark{display:none!important}
+.contact-big,.contact-email,.contact-arrow{color:#3e433c!important}
+.contact-lines{border-color:#d5cfc4!important}
+.cv-side,.cv-main{background:transparent!important}
+.cv-sec h2,.micro-head h2{font-family:Montserrat,Arial,sans-serif!important;font-weight:300!important}
+.cv-callout,.cv-email-card{background:#eae6dc!important}
+.cv-portrait-card img{filter:grayscale(1)}
+/* Remove old brand color islands and dramatic black gradients */
+.nayka-page,.odyssee-page,.techniques-page{--accent:#a58e72!important}
+.nayka-page .proj-hero,.odyssee-page .proj-hero,.techniques-page .proj-hero{background:#f5f3ee!important}
+.nayka-page .nayka-concept,.odyssee-page .odyssee-concept{background:#eeeae2!important}
+.nayka-page .nayka-materials,.odyssee-page .odyssee-materials{background:#f5f3ee!important}
+@media(max-width:800px){.wrap{padding:0 22px!important}.hero{min-height:75vh!important}.hero-word{font-size:clamp(55px,14vw,105px)!important}.page-title{font-size:clamp(48px,12vw,90px)!important}.proj-title{font-size:clamp(46px,10vw,85px)!important}.sec-head h2{font-size:clamp(27px,7vw,43px)!important}#nav #menu{background:#f5f3ee!important}.proj-layout{display:block!important}.pf-grid{grid-template-columns:1fr!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.p-media img,.pf-media img{transition:none!important}}
