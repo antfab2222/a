@@ -1,0 +1,25 @@
+name: Import original portfolio PDF
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/import-portfolio-pdf.yml
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Store and verify the signed-off public PDF
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          cat .github/portfolio-pdf/part-* > "$RUNNER_TEMP/portfolio.pdf"
+          echo 'afcffb26478b6dcf0c146cd513162883346bb09e56531cdee2f92090670b2252'"  $RUNNER_TEMP/portfolio.pdf" | sha256sum --check
+          python3 -c 'import base64,json,sys; json.dump({"encoding":"base64","content":base64.b64encode(open(sys.argv[1],"rb").read()).decode("ascii")},sys.stdout)' "$RUNNER_TEMP/portfolio.pdf" > "$RUNNER_TEMP/blob.json"
+          sha=$(gh api -X POST "repos/$GITHUB_REPOSITORY/git/blobs" --input "$RUNNER_TEMP/blob.json" --jq .sha)
+          test "$sha" = '4f5bc9b392c0ba03ecef2b51d1f7a8e7f4bf325e'
