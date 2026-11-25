@@ -34,13 +34,15 @@
 @media print{.map-index{display:none}.map-analysis,.map-aerial{break-inside:avoid}}
 .map-title{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:24px 0}
 .map-title h1{font-size:clamp(34px,3.7vw,68px);margin:6px 0 0}
-.after-map{border-bottom:1px solid var(--rule)}
+.after-map{border-bottom:1px solid var(--rule);scroll-margin-top:54px}
+.after-map .eyebrow{margin-bottom:12px}
+#braies-toitures{scroll-margin-top:66px}
 .after-map .titleblock h2{margin-bottom:16px}
 @media(max-width:720px){.map-title{padding:14px 0;gap:8px}.map-title .return{font-size:12px}.map-title .eyebrow{font-size:11px}}
 .braies .map-aerial img{object-position:50% 53%}
-.braies #braies-toitures img{width:85%;justify-self:center}
+.braies #braies-vues img{width:85%;justify-self:center}
 .after-map:has(.projecthero) .projecthero img{object-position:center}
-@media(max-width:720px){.braies #braies-toitures img{width:100%}}
+@media(max-width:720px){.braies #braies-vues img{width:100%}}
 
 /* The Santa Fe exports have the same extent; the viewport is shared at every stop. */
 .aligned-map-panel{background:var(--paper)}
